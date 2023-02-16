@@ -7,9 +7,18 @@
     http://www.springframework.org/schema/context
     http://www.springframework.org/schema/context/spring-context.xsd">
 
+<!--    <context:annotation-config/> включает в себя все дефолтные реализации BeanPostProcessor (для удобства, чтобы не вспоминать все)-->
+<!--    так же есть <context:component-scan base-package=""/> просканируется пакет и добавятся BPP-->
+<!--    <context:component-scan base-package="kz.learning"/>-->
+
+    <bean class="org.springframework.context.annotation.CommonAnnotationBeanPostProcessor"/>
+
+<!--    <context:annotation-config/>-->
+
+    <bean class="kz.learning.ProfilingAnnotationBeanPostProcessor"/>
     <bean class="kz.learning.InjectRandomIntAnnotationBeanPostProcessor"/>
 
-    <bean class="kz.learning.TerminatorQuoter" id="terminatorQuoter">
+    <bean class="kz.learning.TerminatorQuoter" id="terminatorQuoter" primary="true">
         <property name="message" value="hello world"/>
     </bean>
 </beans>

@@ -1,11 +1,23 @@
 package kz.learning;
 
-public class TerminatorQuoter implements Quoter{
+import javax.annotation.PostConstruct;
+
+@Profiling
+public class TerminatorQuoter implements Quoter {
 
     @InjectRandomInt(min = 5, max = 10)
     private int repeat;
 
     private String message;
+
+    public TerminatorQuoter() {
+        System.out.println("Phase 1");
+    }
+
+    @PostConstruct
+    public void init() {
+        System.out.println("Phase 2");
+    }
 
     @Override
     public void say() {
