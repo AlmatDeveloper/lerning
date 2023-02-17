@@ -39,3 +39,5 @@ public class Main {
 // Listener слушает context Spring (все event которые там происходит)
 // contextStarted - контекст начал свое построение(но еще не построился)
 // contextRefresh - делается всегда после построения (в большинстве случаях слушается именно этот event)
+
+// на этапе PostConstruct нет никаких прокси
