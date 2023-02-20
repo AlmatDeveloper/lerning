@@ -4,7 +4,11 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class Main {
     public static void main(String[] args) throws Exception {
-        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("context.xml");
+        int length = (int) (Math.log10(0));
+        System.out.println(length);
+
+//        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("context.xml");
+//        context.getBean(Quoter.class).say();
 //        while (true) {
 //            Thread.sleep(1000);
 //            context.getBean(Quoter.class).say();
@@ -44,5 +48,9 @@ public class Main {
 // Если в классе 2 PostConstruct, сработают оба
 
 // Есть 3 фазы "конструктора" -> 1: сам конструктор (ничего не настроено и не инжектится),
-//                                 2: PostConstruct (настроены некоторые бины, но не такие, как @Transactional, вызывается после первого метода BPP (нет proxy))
-//                                 3: ApplicationListener (настроены все бины, вызывается после второго метода BPP)
+//                               2: PostConstruct (настроены некоторые бины, но не такие, как @Transactional, вызывается после первого метода BPP (нет proxy))
+//                               3: ApplicationListener (настроены все бины, вызывается после второго метода BPP)
+
+// BeanFactoryPostProcessor (BFPP) срабатывает раньше чем BPP. BFPP служит для настройки BeanDefinition. Может так же поднастроить и сам BeanFactory до начала его работы
+
+// IoC container - HashMap

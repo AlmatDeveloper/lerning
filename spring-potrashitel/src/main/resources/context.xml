@@ -16,6 +16,7 @@
     <bean class="org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor"/>
 
     <bean class="kz.learning.ProfilingAnnotationBeanPostProcessor"/>
+    <bean class="kz.learning.DeprecatedAnnotationBeanFactoryPostProcessor"/>
     <bean class="kz.learning.InjectRandomIntAnnotationBeanPostProcessor"/>
     <bean class="kz.learning.PostProxyContextListener"/>
 
