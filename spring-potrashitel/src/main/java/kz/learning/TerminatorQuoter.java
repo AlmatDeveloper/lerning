@@ -20,7 +20,9 @@ public class TerminatorQuoter implements Quoter {
     }
 
     @Override
+    @PostProxy
     public void say() {
+        System.out.println("Phase 3 or call");
         for (int i = 0; i < repeat; i++) {
             System.out.println(message);
         }

@@ -21,7 +21,6 @@ public class InjectRandomIntAnnotationBeanPostProcessor implements BeanPostProce
 
                 ReflectionUtils.setField(field, bean, random);
             }
-
         }
 
         return bean;

@@ -34,6 +34,7 @@ public class ProfilingAnnotationBeanPostProcessor implements BeanPostProcessor {
         return bean;
     }
 
+    // Логику пишем во втором методе, чтобы быть уверенными, что меняем именно тот бин который нам нужен
     @Override
     public Object postProcessAfterInitialization(Object bean, String beanName) throws BeansException {
         Class beanClass = map.get(beanName);
