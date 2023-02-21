@@ -1,11 +1,13 @@
-package kz.learning;
+package kz.learning.bfpp;
 
+import kz.learning.annotation.DeprecatedClass;
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.config.BeanDefinition;
 import org.springframework.beans.factory.config.BeanFactoryPostProcessor;
 import org.springframework.beans.factory.config.ConfigurableListableBeanFactory;
 
-public class DeprecatedAnnotationBeanFactoryPostProcessor implements BeanFactoryPostProcessor { // хотим изменить поведение бина до обработки BeanFactory
+// хотим изменить поведение бина до обработки BeanFactory, меняем напрямую в BeanDefinition
+public class DeprecatedClassAnnotationBeanFactoryPostProcessor implements BeanFactoryPostProcessor {
     @Override
     public void postProcessBeanFactory(ConfigurableListableBeanFactory beanFactory) throws BeansException {
         String[] beanDefinitionNames = beanFactory.getBeanDefinitionNames();
@@ -21,7 +23,7 @@ public class DeprecatedAnnotationBeanFactoryPostProcessor implements BeanFactory
                 DeprecatedClass annotation = originalClass.getAnnotation(DeprecatedClass.class);
 
                 if (annotation != null) {
-                    beanDefinition.setBeanClassName(annotation.newImpl().getName()); //установили название нового класса
+                    beanDefinition.setBeanClassName(annotation.newImpl().getName()); // установили название нового класса
                 }
             } catch (Exception e) {
                 throw new RuntimeException(e);

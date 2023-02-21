@@ -1,5 +1,7 @@
-package kz.learning;
+package kz.learning.bpp;
 
+import kz.learning.annotation.Profiling;
+import kz.learning.mbean.ProfilingController;
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.config.BeanPostProcessor;
 

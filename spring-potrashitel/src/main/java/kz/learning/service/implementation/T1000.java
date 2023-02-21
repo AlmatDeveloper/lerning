@@ -1,4 +1,4 @@
-package kz.learning;
+package kz.learning.service.implementation;
 
 public class T1000 extends TerminatorQuoter {
     @Override

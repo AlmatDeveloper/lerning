@@ -1,4 +1,4 @@
-package kz.learning;
+package kz.learning.annotation;
 
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;

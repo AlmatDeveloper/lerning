@@ -1,4 +1,10 @@
-package kz.learning;
+package kz.learning.service.implementation;
+
+import kz.learning.annotation.DeprecatedClass;
+import kz.learning.annotation.InjectRandomInt;
+import kz.learning.annotation.PostProxy;
+import kz.learning.annotation.Profiling;
+import kz.learning.service.Quoter;
 
 import javax.annotation.PostConstruct;
 

@@ -1,26 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xmlns:context="http://www.springframework.org/schema/context"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
-    http://www.springframework.org/schema/beans/spring-beans.xsd
-    http://www.springframework.org/schema/context
-    http://www.springframework.org/schema/context/spring-context.xsd">
+    http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-<!--    <context:annotation-config/> включает в себя все дефолтные реализации BeanPostProcessor (для удобства, чтобы не вспоминать все)-->
-<!--    так же есть <context:component-scan base-package=""/> просканируется пакет и добавятся BPP-->
-<!--    <context:component-scan base-package="kz.learning"/>-->
-<!--    <context:annotation-config/>-->
+    <!--    <context:annotation-config/> включает в себя все дефолтные реализации BeanPostProcessor (для удобства, чтобы не вспоминать все)-->
+    <!--    так же есть <context:component-scan base-package=""/> просканируется пакет и добавятся BPP-->
+    <!--    <context:component-scan base-package="kz.learning.screensaver"/>-->
+    <!--    <context:annotation-config/>-->
 
-    <bean class="org.springframework.context.annotation.CommonAnnotationBeanPostProcessor"/>
-    <bean class="org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor"/>
+    <!--    вручную-->
+    <!--    <bean class="org.springframework.context.annotation.CommonAnnotationBeanPostProcessor"/>-->
+    <!--    вручную-->
+    <!--    <bean class="org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor"/>-->
 
-    <bean class="kz.learning.ProfilingAnnotationBeanPostProcessor"/>
-    <bean class="kz.learning.DeprecatedAnnotationBeanFactoryPostProcessor"/>
-    <bean class="kz.learning.InjectRandomIntAnnotationBeanPostProcessor"/>
-    <bean class="kz.learning.PostProxyContextListener"/>
+    <bean class="kz.learning.bpp.ProfilingAnnotationBeanPostProcessor"/>
+    <bean class="kz.learning.bfpp.DeprecatedClassAnnotationBeanFactoryPostProcessor"/>
+    <bean class="kz.learning.bpp.InjectRandomIntAnnotationBeanPostProcessor"/>
+    <bean class="kz.learning.cl.PostProxyAnnotationContextListener"/>
 
-    <bean class="kz.learning.TerminatorQuoter" id="terminatorQuoter" primary="true">
+    <bean class="kz.learning.service.implementation.TerminatorQuoter" id="terminatorQuoter" primary="true">
         <property name="message" value="hello world"/>
     </bean>
 </beans>

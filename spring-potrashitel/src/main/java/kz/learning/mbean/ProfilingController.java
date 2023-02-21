@@ -1,4 +1,4 @@
-package kz.learning;
+package kz.learning.mbean;
 
 public class ProfilingController implements ProfilingControllerMBean {
     private boolean enabled = true;

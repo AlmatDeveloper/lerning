@@ -1,14 +1,14 @@
 package kz.learning;
 
+import kz.learning.service.Quoter;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class Main {
     public static void main(String[] args) throws Exception {
-        int length = (int) (Math.log10(0));
-        System.out.println(length);
 
-//        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("context.xml");
-//        context.getBean(Quoter.class).say();
+        // есть много реализаций контекста
+        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("context.xml");
+        context.getBean(Quoter.class).say();
 //        while (true) {
 //            Thread.sleep(1000);
 //            context.getBean(Quoter.class).say();
@@ -51,6 +51,11 @@ public class Main {
 //                               2: PostConstruct (настроены некоторые бины, но не такие, как @Transactional, вызывается после первого метода BPP (нет proxy))
 //                               3: ApplicationListener (настроены все бины, вызывается после второго метода BPP)
 
-// BeanFactoryPostProcessor (BFPP) срабатывает раньше чем BPP. BFPP служит для настройки BeanDefinition. Может так же поднастроить и сам BeanFactory до начала его работы
+// BeanFactoryPostProcessor (BFPP) срабатывает раньше чем BPP. BFPP служит для настройки BeanDefinition на этапе обработки. Может так же поднастроить и сам BeanFactory до начала его работы
 
 // IoC container - HashMap
+
+// есть отдельные классы для сканирования xml, java, groovy конфигов
+
+// Если бин singleton, то все бины которые prototype в него инжектятся не будут меняться
+// тут вопрос - как обновлять prototype в singleton
