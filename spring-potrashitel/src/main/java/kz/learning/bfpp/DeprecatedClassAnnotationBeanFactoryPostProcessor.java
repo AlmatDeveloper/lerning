@@ -12,10 +12,12 @@ public class DeprecatedClassAnnotationBeanFactoryPostProcessor implements BeanFa
     public void postProcessBeanFactory(ConfigurableListableBeanFactory beanFactory) throws BeansException {
         String[] beanDefinitionNames = beanFactory.getBeanDefinitionNames();
 
-        for (String beanDefinitionName : beanDefinitionNames) { // Находить по названию бина объект и делать getClass не получится, т.к. это уже прокси
-            BeanDefinition beanDefinition = beanFactory.getBeanDefinition(beanDefinitionName); // искать описания бина по имени через фабрику
+        for (String beanDefinitionName : beanDefinitionNames) {
+            // искать описания бина по имени через фабрику
+            BeanDefinition beanDefinition = beanFactory.getBeanDefinition(beanDefinitionName);
 
-            String beanClassName = beanDefinition.getBeanClassName(); //найти оригинальное название класса
+            // найти оригинальное название класса
+            String beanClassName = beanDefinition.getBeanClassName();
 
             try {
                 Class<?> originalClass = Class.forName(beanClassName);

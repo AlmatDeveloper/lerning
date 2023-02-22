@@ -5,7 +5,6 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class Main {
     public static void main(String[] args) throws Exception {
-
         // есть много реализаций контекста
         ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("context.xml");
         context.getBean(Quoter.class).say();
@@ -33,7 +32,7 @@ public class Main {
 // второй метод в BPP нужен, если мы меняем что-то в классе. Так мы уверены что получаем именно тот бин который нам нужен
 // id бину дают если мы хотим его использовать где-то в коде
 // Если в конструкторе вызвать то что настраивает Spring, то это не сработает. Для этого нужны init методы
-// Объекты настраиваются поле создания
+// Объекты настраиваются после создания
 // Так же init методы - это двухуровневые конструкторы
 // Аннотации обрабатываются с помощью beanPostProcessor
 

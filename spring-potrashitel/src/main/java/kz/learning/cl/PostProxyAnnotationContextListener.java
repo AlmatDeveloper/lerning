@@ -10,7 +10,7 @@ import org.springframework.context.event.ContextRefreshedEvent;
 
 import java.lang.reflect.Method;
 
-// Инжектит Spring в Spring - нормально, инжектит Spring в свои бины - плохо
+// Инжектить Spring в Spring - нормально, инжектить Spring в свои бины - плохо
 // Можно выбирать нужный Event, чтобы не проверять каждый раз (instanceof)
 public class PostProxyAnnotationContextListener implements ApplicationListener<ContextRefreshedEvent> {
 

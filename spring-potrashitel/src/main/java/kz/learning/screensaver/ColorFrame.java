@@ -1,18 +1,16 @@
 package kz.learning.screensaver;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 import javax.swing.*;
 import java.awt.*;
 import java.util.Random;
 
-@Component
-@Scope(scopeName = "prototype")
-public class ColorFrame extends JFrame {
-    @Autowired
-    private Color color;
+//@Component
+//@Scope(scopeName = "prototype")
+public abstract class ColorFrame extends JFrame {
+//    @Autowired
+//    private Color color;
 
     public ColorFrame() throws HeadlessException {
         setSize(200, 200);
@@ -23,15 +21,9 @@ public class ColorFrame extends JFrame {
     public void showOnRandomPlace() {
         Random random = new Random();
         setLocation(random.nextInt(1920), random.nextInt(1080));
-        getContentPane().setBackground(color);
+        getContentPane().setBackground(getColor());
         repaint();
     }
 
-    public Color getColor() {
-        return color;
-    }
-
-    public void setColor(Color color) {
-        this.color = color;
-    }
+    protected abstract Color getColor();
 }
