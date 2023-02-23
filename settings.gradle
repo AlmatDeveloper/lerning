@@ -1,2 +1,5 @@
 rootProject.name = 'Learning'
 include 'spring-potrashitel'
+include 'saburov-anton-logging'
+include 'jpoint-pragmatic-logging'
+
