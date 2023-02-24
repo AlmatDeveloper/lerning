@@ -16,6 +16,7 @@ dependencies {
     implementation 'org.slf4j:slf4j-api:2.0.6'
 
     // на уроне тестов подходит идеально
+    // slf4j работает с simple напрямую, без бриджа
     // testImplementation 'org.slf4j:slf4j-simple:2.0.6'
 
     // бридж
