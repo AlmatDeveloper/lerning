@@ -7,10 +7,14 @@ public class LogbackLogger {
     private static final Logger LOGGER = LoggerFactory.getLogger(LogbackLogger.class);
 
     public static void main(String[] args) {
-        LOGGER.trace("asd {}", "a");
-        LOGGER.debug("asd {}", "q");
-        LOGGER.info("asd {}", "w");
-        LOGGER.warn("asd {}", "e");
-        LOGGER.error("asd {}", "r");
+
+        while (true) {
+            LOGGER.trace("asd {}", "a");
+            LOGGER.debug("asd {}", "q");
+            LOGGER.info("asd {}", "w");
+            LOGGER.warn("asd {}", "e");
+            LOGGER.error("asd {}", "r");
+            new RuntimeException();
+        }
     }
 }
